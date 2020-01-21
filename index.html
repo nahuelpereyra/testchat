@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a
+      id="liveagent_button_online_5731I000000YqHf"
+      href="javascript://Chat"
+      style="display: none;"
+      onclick="liveagent.startChat('5731I000000YqHf')"
+      ><!-- Contenido de chat en línea --></a
+    >
+    <div id="liveagent_button_offline_5731I000000YqHf" style="display: none;">
+      <!-- Contenido de chat fuera de línea -->
+    </div>
+
+    <script type="text/javascript">
+      if (!window._laq) {
+        window._laq = [];
+      }
+      window._laq.push(function() {
+        liveagent.showWhenOnline(
+          "5731I000000YqHf",
+          document.getElementById("liveagent_button_online_5731I000000YqHf")
+        );
+        liveagent.showWhenOffline(
+          "5731I000000YqHf",
+          document.getElementById("liveagent_button_offline_5731I000000YqHf")
+        );
+      });
+      embedded_svc.settings.extraPrechatFormDetails = [
+        {
+          label: "Empresa",
+          value: "Rapsodia",
+          displayToAgent: true
+        },
+        {
+          label: "Origin",
+          value: "Chat",
+          displayToAgent: true
+        },
+        {
+          label: "Email",
+          transcriptFields: ["Email__c"]
+        }
+      ];
+
+      embedded_svc.settings.extraPrechatInfo = [
+        {
+          entityName: "Contact",
+          showOnCreate: true,
+          saveToTranscript: "ContactId",
+          entityFieldMaps: [
+            {
+              isExactMatch: false,
+              fieldName: "FirstName",
+              doCreate: false,
+              doFind: false,
+              label: "First Name"
+            },
+            {
+              isExactMatch: false,
+              fieldName: "LastName",
+              doCreate: false,
+              doFind: false,
+              label: "Last Name"
+            },
+            {
+              isExactMatch: false,
+              fieldName: "Email",
+              doCreate: false,
+              doFind: false,
+              label: "Email"
+            }
+          ]
+        },
+        {
+          entityName: "Case",
+          showOnCreate: true,
+          saveToTranscript: "CaseId",
+          entityFieldMaps: [
+            {
+              isExactMatch: false,
+              fieldName: "Subject",
+              doCreate: true,
+              doFind: false,
+              label: "Subject"
+            },
+            {
+              isExactMatch: false,
+              fieldName: "Status",
+              doCreate: true,
+              doFind: false,
+              label: "Status"
+            },
+            {
+              isExactMatch: false,
+              fieldName: "Origin",
+              doCreate: true,
+              doFind: false,
+              label: "Origin"
+            },
+            {
+              isExactMatch: false,
+              fieldName: "Empresa_de_caso__c",
+              doCreate: true,
+              doFind: false,
+              label: "Empresa"
+            }
+          ]
+        }
+      ];
+    </script>
+  </body>
+</html>
